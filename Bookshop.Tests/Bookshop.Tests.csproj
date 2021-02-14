@@ -21,6 +21,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\Bookshop.BussinesLogic\Bookshop.BussinesLogic.csproj" />
       <ProjectReference Include="..\Bookshop.Domain\Bookshop.Domain.csproj" />
     </ItemGroup>
 
