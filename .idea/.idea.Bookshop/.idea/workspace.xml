@@ -4,11 +4,30 @@
     <projectFile>Bookshop.Api/Bookshop.Api.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="70e18193-3f4e-4d5c-971a-1a7bae3ae16c" name="Default Changelist" comment="" />
+    <list default="true" id="70e18193-3f4e-4d5c-971a-1a7bae3ae16c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Bookshop.DataAccess.MSSQL/Repository/BookRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Bookshop.DataAccess.MSSQL/Repository/ShowcaseRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Bookshop.Domain/Bookshop.Domain.csproj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Bookshop.Domain/Interface/IBookRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Bookshop.Domain/Interface/IShowcaseRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Bookshop.Domain/Models/Book.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Bookshop.Domain/Models/Showcase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Bookshop/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Bookshop/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Bookshop/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Bookshop/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bookshop.DataAccess.MSSQL/Bookshop.DataAccess.MSSQL.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Bookshop.DataAccess.MSSQL/Bookshop.DataAccess.MSSQL.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bookshop.sln" beforeDir="false" afterPath="$PROJECT_DIR$/Bookshop.sln" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Bookshop.Domain/Interface/IBookRepository.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Bookshop.Domain/Interface/IShowcaseRepository.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
@@ -18,11 +37,22 @@
       <option value="$PROJECT_DIR$/Bookshop.Api/appsettings.json" />
       <option value="$PROJECT_DIR$/Bookshop.Api/Startup.cs" />
       <option value="$PROJECT_DIR$/Bookshop.DataAccess.MSSQL/Entities/BookShowcase.cs" />
-      <option value="$PROJECT_DIR$/Bookshop.DataAccess.MSSQL/Entities/Showcase.cs" />
       <option value="$PROJECT_DIR$/Bookshop.DataAccess.MSSQL/BookshopContext.cs" />
+      <option value="$PROJECT_DIR$/Bookshop.DataAccess.MSSQL/Entities/Showcase.cs" />
+      <option value="$PROJECT_DIR$/Bookshop.DataAccess.MSSQL/BookRepository.cs" />
+      <option value="$PROJECT_DIR$/Bookshop.Models/Class1.cs" />
+      <option value="$PROJECT_DIR$/Bookshop.Models/Interface/IBookRepository.cs" />
+      <option value="$PROJECT_DIR$/Bookshop.Models/Interface/IShowcaseRepository.cs" />
+      <option value="$PROJECT_DIR$/Bookshop.Domain/Models/Book.cs" />
+      <option value="$PROJECT_DIR$/Bookshop.Domain/Models/Showcase.cs" />
+      <option value="$PROJECT_DIR$/Bookshop.Domain/Interface/IBookRepository.cs" />
+      <option value="$PROJECT_DIR$/Bookshop.Domain/Interface/IShowcaseRepository.cs" />
+      <option value="$PROJECT_DIR$/Bookshop.DataAccess.MSSQL/Repository/ShowcaseRepository.cs" />
+      <option value="$PROJECT_DIR$/Bookshop.DataAccess.MSSQL/Repository/BookRepository.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1oTgD0xQyagBeFpFEBKclIpPye4" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -74,7 +104,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1613315878155</updated>
-      <workItem from="1613315887336" duration="1897000" />
+      <workItem from="1613315887336" duration="2803000" />
     </task>
     <servers />
   </component>
@@ -83,6 +113,17 @@
   </component>
   <component name="UnityProjectConfiguration" hasMinimizedUI="null" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>

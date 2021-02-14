@@ -42,6 +42,29 @@
             </e>
           </e>
         </e>
+        <e p="Repository" t="Include">
+          <e p="BookRepository.cs" t="Include" />
+          <e p="ShowcaseRepository.cs" t="Include" />
+        </e>
+      </e>
+      <e p="Bookshop.Domain" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Bookshop.Domain.csproj" t="IncludeRecursive" />
+        <e p="Interface" t="Include">
+          <e p="IBookRepository.cs" t="Include" />
+          <e p="IShowcaseRepository.cs" t="Include" />
+        </e>
+        <e p="Models" t="Include">
+          <e p="Book.cs" t="Include" />
+          <e p="Showcase.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="net5.0" t="Include">
+              <e p="Bookshop.Domain.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
       </e>
       <e p="Bookshop.sln" t="IncludeFlat" />
       <e p="packages" t="ExcludeRecursive" />
