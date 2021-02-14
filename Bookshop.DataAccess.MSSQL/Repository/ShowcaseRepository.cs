@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using Bookshop.Domain.Interface;
 using Bookshop.Domain.Models;
 
@@ -33,9 +34,16 @@ namespace Bookshop.DataAccess.MSSQL.Repository
             throw new System.NotImplementedException();
         }
 
-        public Showcase GetById(int id)
+        public Showcase GetById(int? id)
         {
             throw new System.NotImplementedException();
+        }
+
+        public int GetFreeSize(int id)
+        {
+            var currentSize = _context.Books.Where(x => x.ShowcaseId == id).Sum(x => x.Size);
+            var totalSize = GetById(id).TotalSize;
+            return totalSize - currentSize;
         }
     }
 }

@@ -9,6 +9,7 @@ namespace Bookshop.Domain.Interface
         void Delete(int id);
         void Update(Showcase showcase);
         List<Showcase> GetAll();
-        Showcase GetById(int id);
+        Showcase GetById(int? id);
+        int GetFreeSize(int id);
     }
 }

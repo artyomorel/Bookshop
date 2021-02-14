@@ -5,17 +5,39 @@ namespace Bookshop.BussinesLogic.Services
 {
     public class BookService
     {
-        private readonly IBookRepository _repository;
+        private readonly IBookRepository _bookRepository;
+        private readonly IShowcaseRepository _showcaseRepository;
 
-        public BookService(IBookRepository  repository)
+        public BookService(IBookRepository bookRepository,IShowcaseRepository showcaseRepository)
         {
-            _repository = repository;
+            _bookRepository = bookRepository;
+            _showcaseRepository = showcaseRepository;
         }
 
         public bool Add(Book book)
         {
-            _repository.Add(book);
+            if (book.ShowcaseId != null && !ValidateShowCase(book))
+            {
+                return false;
+            }
+            _bookRepository.Add(book);
             return true;
+
+        }
+
+        private bool ValidateShowCase(Book book)
+        {
+            var showcase = _showcaseRepository.GetById(book.ShowcaseId);
+            if (showcase == null || TooManySize(book,showcase))
+            {
+                return false;
+            }
+            return true;
+        }
+
+        private bool TooManySize(Book book,Showcase showcase)
+        {
+            return _showcaseRepository.GetFreeSize(showcase.Id) - book.Size < 0;
         }
 
     }
