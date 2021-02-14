@@ -35,6 +35,7 @@
           <e p="20210214154348_initial.Designer.cs" t="Include" />
           <e p="BookshopContextModelSnapshot.cs" t="Include" />
         </e>
+        <e p="MssqlAutoMapperProfile.cs" t="Include" />
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
             <e p="net5.0" t="Include">
