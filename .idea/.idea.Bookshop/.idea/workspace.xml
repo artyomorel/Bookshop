@@ -4,13 +4,7 @@
     <projectFile>Bookshop.Api/Bookshop.Api.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="70e18193-3f4e-4d5c-971a-1a7bae3ae16c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Bookshop.BussinesLogic/Services/BookService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Bookshop/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Bookshop/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bookshop.Tests/BookServiceTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Bookshop.Tests/BookServiceTest.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bookshop.Tests/Bookshop.Tests.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Bookshop.Tests/Bookshop.Tests.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bookshop.sln" beforeDir="false" afterPath="$PROJECT_DIR$/Bookshop.sln" afterDir="false" />
-    </list>
+    <list default="true" id="70e18193-3f4e-4d5c-971a-1a7bae3ae16c" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -27,7 +21,6 @@
     <changedPaths>
       <option value="$PROJECT_DIR$/Bookshop.MSSQL/Class1.cs" />
       <option value="$PROJECT_DIR$/Bookshop.DataAccess.MSSQL/Class1.cs" />
-      <option value="$PROJECT_DIR$/Bookshop.DataAccess.MSSQL/Entities/Book.cs" />
       <option value="$PROJECT_DIR$/Bookshop.Api/appsettings.json" />
       <option value="$PROJECT_DIR$/Bookshop.DataAccess.MSSQL/Entities/BookShowcase.cs" />
       <option value="$PROJECT_DIR$/Bookshop.DataAccess.MSSQL/BookshopContext.cs" />
@@ -47,6 +40,7 @@
       <option value="$PROJECT_DIR$/Bookshop.Tests/UnitTest1.cs" />
       <option value="$PROJECT_DIR$/Bookshop.BussinesLogic/Class1.cs" />
       <option value="$PROJECT_DIR$/Bookshop.Tests/BookServiceTest.cs" />
+      <option value="$PROJECT_DIR$/Bookshop.DataAccess.MSSQL/Entities/Book.cs" />
       <option value="$PROJECT_DIR$/Bookshop.BussinesLogic/Services/BookService.cs" />
     </changedPaths>
   </component>
@@ -104,7 +98,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1613315878155</updated>
-      <workItem from="1613315887336" duration="3735000" />
+      <workItem from="1613315887336" duration="4039000" />
     </task>
     <servers />
   </component>
