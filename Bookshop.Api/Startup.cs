@@ -34,7 +34,7 @@ namespace Bookshop.Api
             
             services.AddDbContext<BookshopContext>(x =>
                 x.UseSqlServer(_configuration.GetConnectionString("BookshopContext")));
-            services.AddAutoMapper(typeof(MssqlAutoMapperProfile));
+            services.AddAutoMapper(typeof(MssqlAutoMapperProfile),typeof(ApiAutoMapperProfile));
 
 
             services.AddControllers();
