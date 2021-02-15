@@ -1,4 +1,6 @@
-﻿using Bookshop.Domain.Interface;
+﻿using System.Collections.Generic;
+using System.Collections.Immutable;
+using Bookshop.Domain.Interface;
 using Bookshop.Domain.Models;
 
 namespace Bookshop.BussinesLogic.Services
@@ -16,29 +18,57 @@ namespace Bookshop.BussinesLogic.Services
 
         public bool Add(Book book)
         {
-            if (book.ShowcaseId != null && !ValidateShowCase(book))
+            if (ValidateShowCase(book))
             {
-                return false;
+                _bookRepository.Add(book);
+                return true;
             }
-            _bookRepository.Add(book);
-            return true;
 
+            return false;
         }
 
         private bool ValidateShowCase(Book book)
         {
             var showcase = _showcaseRepository.GetById(book.ShowcaseId);
-            if (showcase == null || TooManySize(book,showcase))
-            {
-                return false;
-            }
-            return true;
+            return book.ShowcaseId == null || (showcase != null && IsFreeSpace(book,showcase)) ;
         }
-
-        private bool TooManySize(Book book,Showcase showcase)
+        private bool IsFreeSpace(Book book,Showcase showcase)
         {
-            return _showcaseRepository.GetFreeSize(showcase.Id) - book.Size < 0;
+            return _showcaseRepository.GetFreeSize(showcase.Id) - book.Size >= 0;
+        }
+        
+        public List<Book> GetAll()
+        {
+            return _bookRepository.GetAll();
         }
 
+        public Book GetById(int id)
+        {
+            return _bookRepository.GetById(id);
+        }
+
+        public bool Delete(int id)
+        {
+           var book = _bookRepository.GetById(id);
+           if (book == null)
+           {
+               return false;
+           }
+           _bookRepository.Delete(id);
+           return true;
+        }
+
+        public bool Update(Book book)
+        {
+            var bookFromDatabase = _bookRepository.GetById(book.Id);
+            if (bookFromDatabase != null || ValidateShowCase(book))
+            {
+                _bookRepository.Update(book);
+                return true;
+            }
+
+            return false;
+
+        }
     }
 }
