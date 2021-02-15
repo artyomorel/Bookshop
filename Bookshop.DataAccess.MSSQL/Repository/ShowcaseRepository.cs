@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using AutoMapper;
 using Bookshop.Domain.Interface;
 using Bookshop.Domain.Models;
 
@@ -8,35 +9,45 @@ namespace Bookshop.DataAccess.MSSQL.Repository
     public class ShowcaseRepository: IShowcaseRepository
     {
         private readonly BookshopContext _context;
+        private readonly IMapper _mapper;
 
-        public ShowcaseRepository(BookshopContext context)
+        public ShowcaseRepository(BookshopContext context,IMapper mapper)
         {
             _context = context;
+            _mapper = mapper;
         }
         
         public void Add(Showcase showcase)
         {
-            throw new System.NotImplementedException();
+            var newEntitiesShowcase = _mapper.Map<Entities.Showcase>(showcase);
+            _context.Add(newEntitiesShowcase);
+            _context.SaveChanges();
         }
 
         public void Delete(int id)
         {
-            throw new System.NotImplementedException();
+            _context.Remove(new Showcase {Id = id});
+            _context.SaveChanges();
         }
 
         public void Update(Showcase showcase)
         {
-            throw new System.NotImplementedException();
+            var newEntitiesShowcase = _mapper.Map<Entities.Showcase>(showcase);
+            _context.Update(newEntitiesShowcase);
+            _context.SaveChanges();
         }
 
         public List<Showcase> GetAll()
         {
-            throw new System.NotImplementedException();
+            var newDomainShowcases = _mapper.Map<List<Showcase>>(_context.Showcases);
+            return newDomainShowcases;
         }
 
         public Showcase GetById(int? id)
         {
-            throw new System.NotImplementedException();
+            var showcase = _context.Showcases.FirstOrDefault(x=>x.Id == id);
+            var newShowcase = _mapper.Map<Showcase>(showcase);
+            return newShowcase;
         }
 
         public int GetFreeSize(int id)

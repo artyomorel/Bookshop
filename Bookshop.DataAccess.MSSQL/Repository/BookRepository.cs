@@ -26,7 +26,9 @@ namespace Bookshop.DataAccess.MSSQL.Repository
 
         public Book GetById(int id)
         {
-            throw new System.NotImplementedException();
+            var entitiesBook = _context.Books.FirstOrDefault(x => x.Id == id);
+            var newDomainBook = _mapper.Map<Book>(entitiesBook);
+            return newDomainBook;
         }
 
         public List<Book> GetAll()

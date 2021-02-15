@@ -5,14 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="70e18193-3f4e-4d5c-971a-1a7bae3ae16c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Bookshop.Api/Controllers/BookController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bookshop.Domain/Interface/IBookService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Bookshop/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Bookshop/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Bookshop/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Bookshop/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bookshop.Api/Bookshop.Api.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Bookshop.Api/Bookshop.Api.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bookshop.Api/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Bookshop.Api/Startup.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bookshop.BussinesLogic/Services/BookService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Bookshop.BussinesLogic/Services/BookService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bookshop.DataAccess.MSSQL/Migrations/BookshopContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Bookshop.DataAccess.MSSQL/Migrations/BookshopContextModelSnapshot.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Bookshop.DataAccess.MSSQL/Repository/ShowcaseRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Bookshop.DataAccess.MSSQL/Repository/ShowcaseRepository.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -118,7 +110,7 @@
       <option name="presentableId" value="Default" />
       <updated>1613315878155</updated>
       <workItem from="1613315887336" duration="7495000" />
-      <workItem from="1613402738744" duration="944000" />
+      <workItem from="1613402738744" duration="1299000" />
     </task>
     <servers />
   </component>
