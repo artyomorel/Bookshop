@@ -3,6 +3,7 @@ using System.Linq;
 using AutoMapper;
 using Bookshop.Domain.Interface;
 using Bookshop.Domain.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace Bookshop.DataAccess.MSSQL.Repository
 {
@@ -26,14 +27,14 @@ namespace Bookshop.DataAccess.MSSQL.Repository
 
         public Book GetById(int id)
         {
-            var entitiesBook = _context.Books.FirstOrDefault(x => x.Id == id);
+            var entitiesBook = _context.Books.AsNoTracking().FirstOrDefault(x => x.Id == id);
             var newDomainBook = _mapper.Map<Book>(entitiesBook);
             return newDomainBook;
         }
 
         public List<Book> GetAll()
         {
-            var books = _context.Books.ToList();
+            var books = _context.Books.AsNoTracking().ToList();
             var newBooks = _mapper.Map<List<Book>>(books);
             return newBooks;
         }

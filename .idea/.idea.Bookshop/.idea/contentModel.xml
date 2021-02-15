@@ -22,7 +22,9 @@
           <e p="BookController.cs" t="Include" />
         </e>
         <e p="Models" t="Include">
+          <e p="BookDto.cs" t="Include" />
           <e p="CreateBookRequest.cs" t="Include" />
+          <e p="GetBookResponse.cs" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">

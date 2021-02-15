@@ -5,9 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="70e18193-3f4e-4d5c-971a-1a7bae3ae16c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Bookshop.Api/ApiAutoMapperProfile.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bookshop.Api/Models/CreateBookRequest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Bookshop/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Bookshop/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Bookshop/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Bookshop/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bookshop.Api/ApiAutoMapperProfile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Bookshop.Api/ApiAutoMapperProfile.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Bookshop.Api/Controllers/BookController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Bookshop.Api/Controllers/BookController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bookshop.Api/Models/BookDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Bookshop.Api/Models/BookDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bookshop.BussinesLogic/Services/BookService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Bookshop.BussinesLogic/Services/BookService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bookshop.DataAccess.MSSQL/Repository/BookRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Bookshop.DataAccess.MSSQL/Repository/BookRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bookshop.Domain/Interface/IBookService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Bookshop.Domain/Interface/IBookService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bookshop.Tests/BookServiceTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Bookshop.Tests/BookServiceTest.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +33,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Bookshop.Domain/Interface/IBookRepository.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/62A41345-BC40-4C97-B90D-51F652C4F931/1B/Mock.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Bookshop.Domain/Interface/IShowcaseRepository.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
@@ -49,15 +56,18 @@
       <option value="$PROJECT_DIR$/Bookshop.Domain/Models/Book.cs" />
       <option value="$PROJECT_DIR$/Bookshop.DataAccess.MSSQL/Entities/Book.cs" />
       <option value="$PROJECT_DIR$/Bookshop.Domain/Interface/IShowcaseRepository.cs" />
-      <option value="$PROJECT_DIR$/Bookshop.Tests/BookServiceTest.cs" />
-      <option value="$PROJECT_DIR$/Bookshop.BussinesLogic/Services/BookService.cs" />
-      <option value="$PROJECT_DIR$/Bookshop.Api/Startup.cs" />
       <option value="$PROJECT_DIR$/Bookshop.DataAccess.MSSQL/Repository/ShowcaseRepository.cs" />
-      <option value="$PROJECT_DIR$/Bookshop.DataAccess.MSSQL/Repository/BookRepository.cs" />
       <option value="$PROJECT_DIR$/Bookshop.Api/Models/Book.cs" />
       <option value="$PROJECT_DIR$/Bookshop.Api/Models/CreateBookRequest.cs" />
-      <option value="$PROJECT_DIR$/Bookshop.Api/ApiAutoMapperProfile.cs" />
+      <option value="$PROJECT_DIR$/Bookshop.Api/Models/GetBookResponse.cs" />
+      <option value="$PROJECT_DIR$/Bookshop.Api/Startup.cs" />
+      <option value="$PROJECT_DIR$/Bookshop.Domain/Interface/IBookService.cs" />
+      <option value="$PROJECT_DIR$/Bookshop.DataAccess.MSSQL/Repository/BookRepository.cs" />
       <option value="$PROJECT_DIR$/Bookshop.Api/Controllers/BookController.cs" />
+      <option value="$PROJECT_DIR$/Bookshop.Api/ApiAutoMapperProfile.cs" />
+      <option value="$PROJECT_DIR$/Bookshop.Api/Models/BookDto.cs" />
+      <option value="$PROJECT_DIR$/Bookshop.BussinesLogic/Services/BookService.cs" />
+      <option value="$PROJECT_DIR$/Bookshop.Tests/BookServiceTest.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1oTgD0xQyagBeFpFEBKclIpPye4" />
@@ -115,7 +125,7 @@
       <option name="presentableId" value="Default" />
       <updated>1613315878155</updated>
       <workItem from="1613315887336" duration="7495000" />
-      <workItem from="1613402738744" duration="1660000" />
+      <workItem from="1613402738744" duration="5596000" />
     </task>
     <servers />
   </component>

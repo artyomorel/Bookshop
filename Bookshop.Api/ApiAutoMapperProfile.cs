@@ -9,7 +9,7 @@ namespace Bookshop.Api
         public ApiAutoMapperProfile()
         {
             CreateMap<CreateBookRequest, Book>();
-            CreateMap<Book, BookDto>();
+            CreateMap<Book, BookDto>().ReverseMap();
         }
     }
 }

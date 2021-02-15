@@ -1,6 +1,7 @@
 using AutoMapper;
 using Bookshop.Api.Models;
 using Bookshop.BussinesLogic.Services;
+using Bookshop.Domain.Interface;
 using Bookshop.Domain.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -31,5 +32,39 @@ namespace Bookshop.Api.Controllers
             }
             return Ok(true);
         }
+
+        [HttpGet]
+        public ActionResult<GetBookResponse> GetAll()
+        {
+            var domainBooks = _bookService.GetAll();
+            return new GetBookResponse
+            {
+                Books = _mapper.Map<BookDto[]>(domainBooks)
+            };
+        }
+
+        [HttpGet("{id}")]
+        public ActionResult<BookDto> Get(int id)
+        {
+            var domainBook = _bookService.GetById(id);
+            return _mapper.Map<BookDto>(domainBook);
+        }
+
+        [HttpDelete("{id}")]
+        public ActionResult<bool> Delete(int id)
+        {
+          var result = _bookService.Delete(id);
+          return result? Ok(true): BadRequest("Not found");
+        }
+        
+        [HttpPut]
+        public ActionResult<bool> Update(BookDto bookDto)
+        {
+            var newDomainBook = _mapper.Map<Book>(bookDto);
+            var result = _bookService.Update(newDomainBook);
+            return result? Ok(true): BadRequest("Not found");
+        }
     }
+
+   
 }
