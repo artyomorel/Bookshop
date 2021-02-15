@@ -14,6 +14,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\Bookshop.BussinesLogic\Bookshop.BussinesLogic.csproj" />
       <ProjectReference Include="..\Bookshop.DataAccess.MSSQL\Bookshop.DataAccess.MSSQL.csproj" />
     </ItemGroup>
 

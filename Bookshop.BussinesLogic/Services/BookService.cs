@@ -3,7 +3,7 @@ using Bookshop.Domain.Models;
 
 namespace Bookshop.BussinesLogic.Services
 {
-    public class BookService
+    public class BookService : IBookService
     {
         private readonly IBookRepository _bookRepository;
         private readonly IShowcaseRepository _showcaseRepository;

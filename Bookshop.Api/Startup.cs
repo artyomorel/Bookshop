@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Bookshop.BussinesLogic.Services;
 using Bookshop.DataAccess.MSSQL;
 using Bookshop.DataAccess.MSSQL.Repository;
 using Bookshop.Domain.Interface;
@@ -28,9 +29,15 @@ namespace Bookshop.Api
         {
             services.AddScoped<IBookRepository, BookRepository>();
             services.AddScoped<IShowcaseRepository, ShowcaseRepository>();
+
+            services.AddTransient<IBookService, BookService>();
+            
             services.AddDbContext<BookshopContext>(x =>
                 x.UseSqlServer(_configuration.GetConnectionString("BookshopContext")));
             services.AddAutoMapper(typeof(MssqlAutoMapperProfile));
+
+
+            services.AddControllers();
         }
         
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -44,10 +51,7 @@ namespace Bookshop.Api
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapGet("/", async context =>
-                {
-                    await context.Response.WriteAsync("Hello World!");
-                });
+                endpoints.MapControllers();
             });
         }
     }

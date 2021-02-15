@@ -17,6 +17,9 @@
         <e p="appsettings.json" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
         <e p="Bookshop.Api.csproj" t="IncludeRecursive" />
+        <e p="Controllers" t="Include">
+          <e p="BookController.cs" t="Include" />
+        </e>
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
             <e p="net5.0" t="Include">
@@ -57,6 +60,8 @@
           <e p="20210214154348_initial.Designer.cs" t="Include" />
           <e p="20210214162407_AddShowcaseIdToBook.cs" t="Include" />
           <e p="20210214162407_AddShowcaseIdToBook.Designer.cs" t="Include" />
+          <e p="20210215153624_AddNullToShowcaseID.cs" t="Include" />
+          <e p="20210215153624_AddNullToShowcaseID.Designer.cs" t="Include" />
           <e p="BookshopContextModelSnapshot.cs" t="Include" />
         </e>
         <e p="MssqlAutoMapperProfile.cs" t="Include" />
@@ -77,6 +82,7 @@
         <e p="Bookshop.Domain.csproj" t="IncludeRecursive" />
         <e p="Interface" t="Include">
           <e p="IBookRepository.cs" t="Include" />
+          <e p="IBookService.cs" t="Include" />
           <e p="IShowcaseRepository.cs" t="Include" />
         </e>
         <e p="Models" t="Include">
