@@ -61,7 +61,7 @@ namespace Bookshop.BussinesLogic.Services
         public bool Update(Book book)
         {
             var bookFromDatabase = _bookRepository.GetById(book.Id);
-            if (bookFromDatabase != null || ValidateShowCase(book))
+            if (bookFromDatabase != null && ValidateShowCase(book))
             {
                 _bookRepository.Update(book);
                 return true;

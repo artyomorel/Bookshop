@@ -3,6 +3,7 @@ using System.Linq;
 using AutoMapper;
 using Bookshop.Domain.Interface;
 using Bookshop.Domain.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace Bookshop.DataAccess.MSSQL.Repository
 {
@@ -39,20 +40,20 @@ namespace Bookshop.DataAccess.MSSQL.Repository
 
         public List<Showcase> GetAll()
         {
-            var newDomainShowcases = _mapper.Map<List<Showcase>>(_context.Showcases);
+            var newDomainShowcases = _mapper.Map<List<Showcase>>(_context.Showcases.AsNoTracking());
             return newDomainShowcases;
         }
 
         public Showcase GetById(int? id)
         {
-            var showcase = _context.Showcases.FirstOrDefault(x=>x.Id == id);
+            var showcase = _context.Showcases.AsNoTracking().FirstOrDefault(x=>x.Id == id);
             var newShowcase = _mapper.Map<Showcase>(showcase);
             return newShowcase;
         }
 
         public int GetFreeSize(int id)
         {
-            var currentSize = _context.Books.Where(x => x.ShowcaseId == id).Sum(x => x.Size);
+            var currentSize = _context.Books.AsNoTracking().Where(x => x.ShowcaseId == id).Sum(x => x.Size);
             var totalSize = GetById(id).TotalSize;
             return totalSize - currentSize;
         }
