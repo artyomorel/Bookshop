@@ -51,6 +51,7 @@
         </e>
         <e p="Services" t="Include">
           <e p="BookService.cs" t="Include" />
+          <e p="ShowcaseService.cs" t="Include" />
         </e>
       </e>
       <e p="Bookshop.DataAccess.MSSQL" t="IncludeRecursive">
@@ -115,6 +116,7 @@
             </e>
           </e>
         </e>
+        <e p="ShowcaseServiceTest.cs" t="Include" />
       </e>
       <e p="packages" t="ExcludeRecursive" />
     </e>
