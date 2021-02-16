@@ -32,6 +32,7 @@ namespace Bookshop.Api
         {
             services.AddScoped<IBookRepository, BookRepository>();
             services.AddScoped<IShowcaseRepository, ShowcaseRepository>();
+            services.AddTransient<IShowcaseService, ShowcaseService>();
 
             services.AddTransient<IBookService, BookService>();
 

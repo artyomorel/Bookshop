@@ -18,13 +18,10 @@ namespace Bookshop.BussinesLogic.Services
 
         public bool Add(Book book)
         {
-            if (ValidateShowCase(book))
-            {
-                _bookRepository.Add(book);
-                return true;
-            }
+            if (!ValidateShowCase(book)) return false;
+            _bookRepository.Add(book);
+            return true;
 
-            return false;
         }
 
         private bool ValidateShowCase(Book book)

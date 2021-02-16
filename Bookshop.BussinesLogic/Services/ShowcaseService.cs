@@ -4,7 +4,7 @@ using Bookshop.Domain.Models;
 
 namespace Bookshop.BussinesLogic.Services
 {
-    public class ShowcaseService
+    public class ShowcaseService : IShowcaseService
     {
         private readonly IShowcaseRepository _showcaseRepository;
 
@@ -40,11 +40,7 @@ namespace Bookshop.BussinesLogic.Services
             return _showcaseRepository.GetById(id);
         }
 
-        public ICollection<Book> GetBookFromShowcase(int id)
-        {
-            var result = _showcaseRepository.GetById(id);
-            return result.Books;
-        }
+
 
         public bool Update(Showcase showcase)
         {
