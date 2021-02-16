@@ -2,10 +2,13 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Bookshop.Api.Models;
 using Bookshop.BussinesLogic.Services;
 using Bookshop.DataAccess.MSSQL;
 using Bookshop.DataAccess.MSSQL.Repository;
 using Bookshop.Domain.Interface;
+using FluentValidation;
+using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -31,13 +34,16 @@ namespace Bookshop.Api
             services.AddScoped<IShowcaseRepository, ShowcaseRepository>();
 
             services.AddTransient<IBookService, BookService>();
+
+            services.AddTransient<IValidator<CreateBookRequest>, CreateBookRequestValidation>();
+            
             
             services.AddDbContext<BookshopContext>(x =>
                 x.UseSqlServer(_configuration.GetConnectionString("BookshopContext")));
             services.AddAutoMapper(typeof(MssqlAutoMapperProfile),typeof(ApiAutoMapperProfile));
 
 
-            services.AddControllers();
+            services.AddControllers().AddFluentValidation();
         }
         
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

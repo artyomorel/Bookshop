@@ -5,7 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="70e18193-3f4e-4d5c-971a-1a7bae3ae16c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Bookshop.DataAccess.MSSQL/Repository/ShowcaseRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Bookshop.DataAccess.MSSQL/Repository/ShowcaseRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Bookshop/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Bookshop/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bookshop.Api/Bookshop.Api.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Bookshop.Api/Bookshop.Api.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bookshop.Api/Models/BookDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Bookshop.Api/Models/BookDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bookshop.Api/Models/CreateBookRequest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Bookshop.Api/Models/CreateBookRequest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bookshop.Api/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Bookshop.Api/Startup.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,17 +53,17 @@
       <option value="$PROJECT_DIR$/Bookshop.DataAccess.MSSQL/Entities/Book.cs" />
       <option value="$PROJECT_DIR$/Bookshop.Domain/Interface/IShowcaseRepository.cs" />
       <option value="$PROJECT_DIR$/Bookshop.Api/Models/Book.cs" />
-      <option value="$PROJECT_DIR$/Bookshop.Api/Models/CreateBookRequest.cs" />
       <option value="$PROJECT_DIR$/Bookshop.Api/Models/GetBookResponse.cs" />
-      <option value="$PROJECT_DIR$/Bookshop.Api/Startup.cs" />
       <option value="$PROJECT_DIR$/Bookshop.Domain/Interface/IBookService.cs" />
       <option value="$PROJECT_DIR$/Bookshop.DataAccess.MSSQL/Repository/BookRepository.cs" />
       <option value="$PROJECT_DIR$/Bookshop.Api/Controllers/BookController.cs" />
       <option value="$PROJECT_DIR$/Bookshop.Api/ApiAutoMapperProfile.cs" />
-      <option value="$PROJECT_DIR$/Bookshop.Api/Models/BookDto.cs" />
+      <option value="$PROJECT_DIR$/Bookshop.DataAccess.MSSQL/Repository/ShowcaseRepository.cs" />
       <option value="$PROJECT_DIR$/Bookshop.BussinesLogic/Services/BookService.cs" />
       <option value="$PROJECT_DIR$/Bookshop.Tests/BookServiceTest.cs" />
-      <option value="$PROJECT_DIR$/Bookshop.DataAccess.MSSQL/Repository/ShowcaseRepository.cs" />
+      <option value="$PROJECT_DIR$/Bookshop.Api/Models/CreateBookRequest.cs" />
+      <option value="$PROJECT_DIR$/Bookshop.Api/Startup.cs" />
+      <option value="$PROJECT_DIR$/Bookshop.Api/Models/BookDto.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1oTgD0xQyagBeFpFEBKclIpPye4" />
@@ -117,7 +121,8 @@
       <option name="presentableId" value="Default" />
       <updated>1613315878155</updated>
       <workItem from="1613315887336" duration="7495000" />
-      <workItem from="1613402738744" duration="5953000" />
+      <workItem from="1613402738744" duration="6267000" />
+      <workItem from="1613496486394" duration="333000" />
     </task>
     <servers />
   </component>
