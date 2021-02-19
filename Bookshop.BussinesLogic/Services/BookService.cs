@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.Collections.Immutable;
 using Bookshop.Domain.Interface;
 using Bookshop.Domain.Models;

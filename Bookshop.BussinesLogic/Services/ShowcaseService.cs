@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using Bookshop.Domain.Interface;
 using Bookshop.Domain.Models;
 
@@ -7,10 +8,12 @@ namespace Bookshop.BussinesLogic.Services
     public class ShowcaseService : IShowcaseService
     {
         private readonly IShowcaseRepository _showcaseRepository;
+        private readonly IBookRepository _bookRepository;
 
-        public ShowcaseService(IShowcaseRepository showcaseRepository)
+        public ShowcaseService(IShowcaseRepository showcaseRepository,IBookRepository bookRepository)
         {
             _showcaseRepository = showcaseRepository;
+            _bookRepository = bookRepository;
         }
 
         public bool Add(Showcase showcase)
@@ -49,8 +52,15 @@ namespace Bookshop.BussinesLogic.Services
             {
                 return false;
             }
+            var currentTakenSize = _bookRepository.GetBooksFromShowcase(showcase.Id).Sum(x=>x.Size);
+            if (currentTakenSize > showcase.TotalSize)
+            {
+                return false;
+            }
+            
             _showcaseRepository.Update(showcase);
             return true;
         }
+        
     }
 }
