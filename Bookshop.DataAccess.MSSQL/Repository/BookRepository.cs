@@ -51,5 +51,10 @@ namespace Bookshop.DataAccess.MSSQL.Repository
             _context.Books.Remove(new Entities.Book {Id = id});
             _context.SaveChanges();
         }
+        
+        public Book[] GetBooksFromShowcase(int id)
+        {
+            return GetAll().Where(x => x.ShowcaseId == id).ToArray();
+        }
     }
 }
