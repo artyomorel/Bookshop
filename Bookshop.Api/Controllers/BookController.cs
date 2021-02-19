@@ -49,6 +49,8 @@ namespace Bookshop.Api.Controllers
             var domainBook = _bookService.GetById(id);
             return _mapper.Map<BookDto>(domainBook);
         }
+        
+        
 
         [HttpDelete("{id}")]
         public ActionResult<bool> Delete(int id)
