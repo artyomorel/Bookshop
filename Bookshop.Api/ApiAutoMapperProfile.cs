@@ -10,6 +10,8 @@ namespace Bookshop.Api
         {
             CreateMap<CreateBookRequest, Book>();
             CreateMap<Book, BookDto>().ReverseMap();
+            CreateMap<CreateShowcaseRequest, Showcase>();
+            CreateMap<Showcase, ShowcaseDto>().ReverseMap();
         }
     }
 }

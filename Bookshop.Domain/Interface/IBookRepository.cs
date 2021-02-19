@@ -10,5 +10,6 @@ namespace Bookshop.Domain.Interface
         List<Book> GetAll();
         void Update(Book book);
         void Delete(int id);
+        Book[] GetBooksFromShowcase(int id);
     }
 }

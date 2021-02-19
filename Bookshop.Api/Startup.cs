@@ -37,7 +37,9 @@ namespace Bookshop.Api
             services.AddTransient<IBookService, BookService>();
 
             services.AddTransient<IValidator<CreateBookRequest>, CreateBookRequestValidation>();
-            
+            services.AddTransient<IValidator<CreateShowcaseRequest>, CreateShowcaseRequestValidator>();
+            services.AddTransient<IValidator<BookDto>, BookDtoValidation>();
+            services.AddTransient<IValidator<ShowcaseDto>, ShowcaseDtoValidation>();
             
             services.AddDbContext<BookshopContext>(x =>
                 x.UseSqlServer(_configuration.GetConnectionString("BookshopContext")));
@@ -62,4 +64,6 @@ namespace Bookshop.Api
             });
         }
     }
+
+    
 }

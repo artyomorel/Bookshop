@@ -25,7 +25,10 @@
         <e p="Models" t="Include">
           <e p="BookDto.cs" t="Include" />
           <e p="CreateBookRequest.cs" t="Include" />
+          <e p="CreateShowcaseRequest.cs" t="Include" />
           <e p="GetBookResponse.cs" t="Include" />
+          <e p="GetShowcasesResponse.cs" t="Include" />
+          <e p="ShowcaseDto.cs" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
@@ -70,6 +73,8 @@
           <e p="20210214162407_AddShowcaseIdToBook.Designer.cs" t="Include" />
           <e p="20210215153624_AddNullToShowcaseID.cs" t="Include" />
           <e p="20210215153624_AddNullToShowcaseID.Designer.cs" t="Include" />
+          <e p="20210219173223_AddNullableForDeleteTime.cs" t="Include" />
+          <e p="20210219173223_AddNullableForDeleteTime.Designer.cs" t="Include" />
           <e p="BookshopContextModelSnapshot.cs" t="Include" />
         </e>
         <e p="MssqlAutoMapperProfile.cs" t="Include" />
