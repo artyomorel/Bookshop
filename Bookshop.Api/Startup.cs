@@ -63,6 +63,7 @@ namespace Bookshop.Api
             app.UseSwaggerUI(x =>
             {
                 x.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+                x.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V2");
                 x.RoutePrefix = string.Empty;
             });
             

@@ -28,7 +28,7 @@ namespace Bookshop.BussinesLogic.Services
             var showcase = _showcaseRepository.GetById(id);
             if (showcase == null)
             {
-                throw new NotFoundException($"Showcase with {id} not found");
+                throw new NotFoundException($"Showcase with id {id} not found");
             }
             _showcaseRepository.Delete(id);
             return true;
@@ -51,7 +51,7 @@ namespace Bookshop.BussinesLogic.Services
             var showcaseFromDatabase = _showcaseRepository.GetById(showcase.Id);
             if (showcaseFromDatabase == null)
             {
-                throw new NotFoundException($"Showcase with {showcase.Id} not found");
+                throw new NotFoundException($"Showcase with id {showcase.Id} not found");
             }
             var currentTakenSize = _bookRepository.GetBooksFromShowcase(showcase.Id).Sum(x=>x.Size);
             if (currentTakenSize > showcase.TotalSize)

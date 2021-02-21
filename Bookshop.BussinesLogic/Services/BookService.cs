@@ -20,7 +20,7 @@ namespace Bookshop.BussinesLogic.Services
 
         public bool Add(Book book)
         {
-            if (!CheckValidateShowcase(book)) throw new ValidateShowcase($"Showcase with {book.ShowcaseId} not validate");
+            if (!CheckValidateShowcase(book)) throw new ValidateShowcase($"Showcase with id {book.ShowcaseId} not validate");
             _bookRepository.Add(book);
             return true;
 
