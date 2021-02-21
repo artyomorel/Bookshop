@@ -45,8 +45,9 @@ namespace Bookshop.Api
                 x.UseSqlServer(_configuration.GetConnectionString("BookshopContext")));
             services.AddAutoMapper(typeof(MssqlAutoMapperProfile),typeof(ApiAutoMapperProfile));
 
-
+            
             services.AddControllers().AddFluentValidation();
+            services.AddSwaggerGen();
         }
         
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -57,7 +58,14 @@ namespace Bookshop.Api
             }
 
             app.UseRouting();
+            app.UseSwagger();
 
+            app.UseSwaggerUI(x =>
+            {
+                x.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+                x.RoutePrefix = string.Empty;
+            });
+            
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
