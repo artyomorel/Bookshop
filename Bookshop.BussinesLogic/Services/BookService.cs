@@ -1,5 +1,7 @@
 using System.Collections.Generic;
 using System.Collections.Immutable;
+using System.ComponentModel.DataAnnotations;
+using Bookshop.BussinesLogic.Exceptions;
 using Bookshop.Domain.Interface;
 using Bookshop.Domain.Models;
 
@@ -18,13 +20,13 @@ namespace Bookshop.BussinesLogic.Services
 
         public bool Add(Book book)
         {
-            if (!ValidateShowCase(book)) return false;
+            if (!CheckValidateShowcase(book)) throw new ValidateShowcase($"Showcase with {book.ShowcaseId} not validate");
             _bookRepository.Add(book);
             return true;
 
         }
 
-        private bool ValidateShowCase(Book book)
+        private bool CheckValidateShowcase(Book book)
         {
             var showcase = _showcaseRepository.GetById(book.ShowcaseId);
             return book.ShowcaseId == null || (showcase != null && IsFreeSpace(book,showcase)) ;
@@ -49,7 +51,7 @@ namespace Bookshop.BussinesLogic.Services
            var book = _bookRepository.GetById(id);
            if (book == null)
            {
-               return false;
+               throw new NotFoundException($"Book with {id} not found");
            }
            _bookRepository.Delete(id);
            return true;
@@ -58,13 +60,19 @@ namespace Bookshop.BussinesLogic.Services
         public bool Update(Book book)
         {
             var bookFromDatabase = _bookRepository.GetById(book.Id);
-            if (bookFromDatabase != null && ValidateShowCase(book))
+            if (bookFromDatabase == null)
             {
-                _bookRepository.Update(book);
-                return true;
+                throw new NotFoundException($"Book with {book.Id} not found");
             }
 
-            return false;
+            if (!CheckValidateShowcase(book))
+            {
+                throw new ValidateShowcase($"Showcase with {book.ShowcaseId} not validate");
+            }
+                
+            _bookRepository.Update(book);
+            return true;
+            
 
         }
     }

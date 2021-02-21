@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using Bookshop.BussinesLogic.Exceptions;
 using Bookshop.Domain.Interface;
 using Bookshop.Domain.Models;
 
@@ -27,7 +28,7 @@ namespace Bookshop.BussinesLogic.Services
             var showcase = _showcaseRepository.GetById(id);
             if (showcase == null)
             {
-                return false;
+                throw new NotFoundException($"Showcase with {id} not found");
             }
             _showcaseRepository.Delete(id);
             return true;
@@ -50,7 +51,7 @@ namespace Bookshop.BussinesLogic.Services
             var showcaseFromDatabase = _showcaseRepository.GetById(showcase.Id);
             if (showcaseFromDatabase == null)
             {
-                return false;
+                throw new NotFoundException($"Showcase with {showcase.Id} not found");
             }
             var currentTakenSize = _bookRepository.GetBooksFromShowcase(showcase.Id).Sum(x=>x.Size);
             if (currentTakenSize > showcase.TotalSize)
