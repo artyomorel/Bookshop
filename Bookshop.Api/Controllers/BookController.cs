@@ -1,5 +1,7 @@
+using System;
 using AutoMapper;
 using Bookshop.Api.Models;
+using Bookshop.BussinesLogic.Exceptions;
 using Bookshop.BussinesLogic.Services;
 using Bookshop.Domain.Interface;
 using Bookshop.Domain.Models;
@@ -24,13 +26,17 @@ namespace Bookshop.Api.Controllers
         [HttpPost]
         public ActionResult<bool> Add(CreateBookRequest createBookRequest)
         {
-            var newDomainBook = _mapper.Map<Book>(createBookRequest);
-            var result = _bookService.Add(newDomainBook);
-            if (!result)
+            try
             {
-                return BadRequest(false);
+                var newDomainBook = _mapper.Map<Book>(createBookRequest);
+                var result = _bookService.Add(newDomainBook);
+                return Ok(result);
             }
-            return Ok(true);
+            catch (ValidateShowcase ex)
+            {
+                return BadRequest(ex.Message);
+            }
+
         }
 
         [HttpGet]
@@ -55,16 +61,36 @@ namespace Bookshop.Api.Controllers
         [HttpDelete("{id}")]
         public ActionResult<bool> Delete(int id)
         {
-          var result = _bookService.Delete(id);
-          return result? Ok(true): BadRequest("Not found");
+            try
+            {
+                var result = _bookService.Delete(id);
+                return Ok(result);
+            }
+            catch (NotFoundException ex)
+            {
+                return NotFound(ex.Message);
+            }
+
         }
         
         [HttpPut]
         public ActionResult<bool> Update(BookDto bookDto)
         {
-            var newDomainBook = _mapper.Map<Book>(bookDto);
-            var result = _bookService.Update(newDomainBook);
-            return result? Ok(true): BadRequest("Not found");
+
+            try
+            {
+                var newDomainBook = _mapper.Map<Book>(bookDto);
+                var result = _bookService.Update(newDomainBook);
+                return Ok(result);
+            }
+            catch (NotFoundException ex)
+            {
+                return NotFound(ex.Message);
+            }
+            catch (ValidateShowcase ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
     }
 

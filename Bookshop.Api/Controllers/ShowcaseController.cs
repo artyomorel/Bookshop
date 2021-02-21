@@ -1,7 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using AutoMapper;
 using Bookshop.Api.Models;
+using Bookshop.BussinesLogic.Exceptions;
 using Bookshop.Domain.Interface;
 using Bookshop.Domain.Models;
 using Microsoft.AspNetCore.Mvc;
@@ -36,26 +35,37 @@ namespace Bookshop.Api.Controllers
         [HttpDelete("{id}")]
         public ActionResult<bool> Delete(int id)
         {
-            var result = _service.Delete(id);
-            if (!result)
+            try
             {
-                return BadRequest(false);
+                var result = _service.Delete(id);
+                return Ok(result);
             }
-
-            return Ok(true);
+            catch (NotFoundException ex)
+            {
+                return NotFound(ex.Message);
+            }
+            
         }
 
         [HttpPut]
         public ActionResult<bool> Update(ShowcaseDto showcaseDto)
         {
-            var showcaseModel = _mapper.Map<Showcase>(showcaseDto);
-            var result = _service.Update(showcaseModel);
-            if (!result)
+            try
             {
-                return BadRequest(false);
+                var showcaseModel = _mapper.Map<Showcase>(showcaseDto);
+                var result = _service.Update(showcaseModel);
+                return Ok(result);
+            }
+            catch (NotFoundException ex)
+            {
+                return NotFound(ex.Message);
+            }
+            catch (ValidateShowcase ex)
+            {
+                return BadRequest(ex.Message);
             }
 
-            return Ok(true);
+           
         }
         
         [HttpPost]
