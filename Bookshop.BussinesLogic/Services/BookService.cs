@@ -51,7 +51,7 @@ namespace Bookshop.BussinesLogic.Services
            var book = _bookRepository.GetById(id);
            if (book == null)
            {
-               throw new NotFoundException($"Book with {id} not found");
+               throw new NotFoundException($"Book with id {id} not found");
            }
            _bookRepository.Delete(id);
            return true;
@@ -62,12 +62,12 @@ namespace Bookshop.BussinesLogic.Services
             var bookFromDatabase = _bookRepository.GetById(book.Id);
             if (bookFromDatabase == null)
             {
-                throw new NotFoundException($"Book with {book.Id} not found");
+                throw new NotFoundException($"Book with id {book.Id} not found");
             }
 
             if (!CheckValidateShowcase(book))
             {
-                throw new ValidateShowcase($"Showcase with {book.ShowcaseId} not validate");
+                throw new ValidateShowcase($"Showcase with id  {book.ShowcaseId} not validate");
             }
                 
             _bookRepository.Update(book);

@@ -1,4 +1,5 @@
 using System;
+using Bookshop.BussinesLogic.Exceptions;
 using Bookshop.BussinesLogic.Services;
 using Bookshop.Domain.Interface;
 using Bookshop.Domain.Models;
@@ -77,12 +78,11 @@ namespace Bookshop.Tests
             //act
             
             var bookService = new BookService(bookRepositoryMock.Object,showcaseRepositoryMock.Object);
-            var result = bookService.Add(expectedBook);
             
             //Assert
+            Assert.Throws<ValidateShowcase>(() => bookService.Add(expectedBook));
             bookRepositoryMock.Verify(x=>x.Add(expectedBook),Times.Never);
             showcaseRepositoryMock.VerifyAll();
-            Assert.False(result);
         }
 
         [Fact]
@@ -109,13 +109,12 @@ namespace Bookshop.Tests
             //act
             
             var bookService = new BookService(bookRepositoryMock.Object,showcaseRepositoryMock.Object);
-            var result = bookService.Add(expectedBook);
-            
+
             //Assert
+            Assert.Throws<ValidateShowcase>(() => bookService.Add(expectedBook));
             bookRepositoryMock.Verify(x=>x.Add(expectedBook),Times.Never);
             showcaseRepositoryMock.Verify(x=>x.GetById(expectedBook.Id),Times.Once);
             showcaseRepositoryMock.Verify(x=>x.GetFreeSize(expectedBook.Id),Times.Never);
-            Assert.False(result);
         }
 
         [Fact]
@@ -167,12 +166,9 @@ namespace Bookshop.Tests
             
             //Act
 
-            var result = bookService.Delete(expectedId);
-            
-            
             //Assert
+            Assert.Throws<NotFoundException>(()=> bookService.Delete(expectedId));
             bookRepositoryMock.VerifyAll();
-            Assert.False(result);
         }
 
         [Fact]
@@ -234,13 +230,12 @@ namespace Bookshop.Tests
             var bookService = new BookService(bookRepositoryMock.Object, showcaseRepositoryMock.Object);
             
             //Act
-
-            var result = bookService.Update(expectedBook);
+            
             
             
             //Assert
+            Assert.Throws<NotFoundException>(()=> bookService.Update(expectedBook));
             bookRepositoryMock.VerifyAll();
-            Assert.False(result);
         }
         
         
@@ -268,13 +263,12 @@ namespace Bookshop.Tests
             //act
             
             var bookService = new BookService(bookRepositoryMock.Object,showcaseRepositoryMock.Object);
-            var result = bookService.Add(expectedBook);
-            
+
             //Assert
-            bookRepositoryMock.Verify(x=>x.Add(expectedBook),Times.Never);
-            showcaseRepositoryMock.Verify(x=>x.GetById(expectedBook.Id),Times.Once);
+            Assert.Throws<NotFoundException>(() => bookService.Update(expectedBook));
+            bookRepositoryMock.Verify(x=>x.Update(expectedBook),Times.Never);
+            showcaseRepositoryMock.Verify(x=>x.GetById(expectedBook.Id),Times.Never);
             showcaseRepositoryMock.Verify(x=>x.GetFreeSize(expectedBook.Id),Times.Never);
-            Assert.False(result);
         }
         
         [Fact]
@@ -287,7 +281,7 @@ namespace Bookshop.Tests
                 Id = 1,
                 Price = 5,
                 Name = "Voyna i Mir",
-                Size = 10,
+                Size = 100,
                 ShowcaseId = 1
             };
 
@@ -302,17 +296,17 @@ namespace Bookshop.Tests
             var showcaseRepositoryMock = new Mock<IShowcaseRepository>();
             
             bookRepositoryMock.Setup(x=>x.Update(expectedBook)).Verifiable();
+            bookRepositoryMock.Setup(x => x.GetById(expectedBook.Id)).Returns(expectedBook);
             showcaseRepositoryMock.Setup(x => x.GetById(expectedShowcase.Id)).Returns(expectedShowcase).Verifiable();
-            showcaseRepositoryMock.Setup(x => x.GetFreeSize(expectedShowcase.Id)).Returns(5).Verifiable();
+            showcaseRepositoryMock.Setup(x => x.GetFreeSize(expectedShowcase.Id)).Returns(10).Verifiable();
             //act
             
             var bookService = new BookService(bookRepositoryMock.Object,showcaseRepositoryMock.Object);
-            var result = bookService.Add(expectedBook);
-            
+
             //Assert
-            bookRepositoryMock.Verify(x=>x.Add(expectedBook),Times.Never);
-            showcaseRepositoryMock.VerifyAll();
-            Assert.False(result);
+            Assert.Throws<ValidateShowcase>(() => bookService.Update(expectedBook));
+            bookRepositoryMock.Verify(x=>x.Update(expectedBook),Times.Never);
+            showcaseRepositoryMock.Verify(x=>x.GetById(expectedShowcase.Id),Times.Once);
         }
         
     }

@@ -56,7 +56,7 @@ namespace Bookshop.BussinesLogic.Services
             var currentTakenSize = _bookRepository.GetBooksFromShowcase(showcase.Id).Sum(x=>x.Size);
             if (currentTakenSize > showcase.TotalSize)
             {
-                return false;
+                throw new ValidateShowcase($"Not enough free space");
             }
             
             _showcaseRepository.Update(showcase);

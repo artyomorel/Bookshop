@@ -1,4 +1,5 @@
 using System;
+using Bookshop.BussinesLogic.Exceptions;
 using Bookshop.BussinesLogic.Services;
 using Bookshop.Domain.Interface;
 using Bookshop.Domain.Models;
@@ -70,12 +71,12 @@ namespace Bookshop.Tests
             showcaseRepositoryMock.Setup(x=>x.GetById(expectedId)).Returns((Showcase)null);
             //act
             var showcaseService = new ShowcaseService(showcaseRepositoryMock.Object, bookRepositoryMock.Object);
-            var result = showcaseService.Delete(expectedId);
 
             //Arrange
+            Assert.Throws<NotFoundException>(()=> showcaseService.Delete(expectedId));
             showcaseRepositoryMock.Verify(x=>x.GetById(expectedId),Times.Once);
             showcaseRepositoryMock.Verify(x=>x.Delete(expectedId),Times.Never);
-            Assert.False(result);
+            
         }
         
         
@@ -100,12 +101,11 @@ namespace Bookshop.Tests
             showcaseRepositoryMock.Setup(x=>x.GetById(expectedShowCase.Id)).Returns((Showcase)null);
             //act
             var showcaseService = new ShowcaseService(showcaseRepositoryMock.Object, bookRepositoryMock.Object);
-            var result = showcaseService.Update(expectedShowCase);
 
             //Arrange
+            Assert.Throws<NotFoundException>(()=> showcaseService.Update(expectedShowCase));
             showcaseRepositoryMock.Verify(x=>x.GetById(expectedShowCase.Id),Times.Once);
             showcaseRepositoryMock.Verify(x=>x.Update(expectedShowCase),Times.Never);
-            Assert.False(result);
         }
         
         
@@ -179,13 +179,12 @@ namespace Bookshop.Tests
                 Returns(new Book[]{expectedBook}).Verifiable();
             //act
             var showcaseService = new ShowcaseService(showcaseRepositoryMock.Object, bookRepositoryMock.Object);
-            var result = showcaseService.Update(expectedShowCase);
 
             //Arrange
+            Assert.Throws<ValidateShowcase>(()=>showcaseService.Update(expectedShowCase));
             showcaseRepositoryMock.Verify(x=>x.GetById(expectedShowCase.Id),Times.Once);
             showcaseRepositoryMock.Verify(x=>x.Update(expectedShowCase),Times.Never);
             bookRepositoryMock.VerifyAll();
-            Assert.False(result);
         }
     }
 }
