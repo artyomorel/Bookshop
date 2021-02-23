@@ -5,7 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="70e18193-3f4e-4d5c-971a-1a7bae3ae16c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Bookshop.BussinesLogic/Services/ShowcaseService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Bookshop.BussinesLogic/Services/ShowcaseService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Bookshop.Api/nlog.config" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Bookshop/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Bookshop/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Bookshop/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Bookshop/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bookshop.Api/Bookshop.Api.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Bookshop.Api/Bookshop.Api.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bookshop.Api/Controllers/BookController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Bookshop.Api/Controllers/BookController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bookshop.Api/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Bookshop.Api/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bookshop.Api/appsettings.Development.json" beforeDir="false" afterPath="$PROJECT_DIR$/Bookshop.Api/appsettings.Development.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bookshop.Api/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/Bookshop.Api/appsettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bookshop.Domain/Models/Book.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Bookshop.Domain/Models/Book.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,7 +40,6 @@
     <changedPaths>
       <option value="$PROJECT_DIR$/Bookshop.MSSQL/Class1.cs" />
       <option value="$PROJECT_DIR$/Bookshop.DataAccess.MSSQL/Class1.cs" />
-      <option value="$PROJECT_DIR$/Bookshop.Api/appsettings.json" />
       <option value="$PROJECT_DIR$/Bookshop.DataAccess.MSSQL/Entities/BookShowcase.cs" />
       <option value="$PROJECT_DIR$/Bookshop.DataAccess.MSSQL/BookshopContext.cs" />
       <option value="$PROJECT_DIR$/Bookshop.DataAccess.MSSQL/BookRepository.cs" />
@@ -42,7 +49,6 @@
       <option value="$PROJECT_DIR$/Bookshop.DataAccess.MSSQL/MssqlAutoMapperProfile.cs" />
       <option value="$PROJECT_DIR$/Bookshop.Tests/UnitTest1.cs" />
       <option value="$PROJECT_DIR$/Bookshop.BussinesLogic/Class1.cs" />
-      <option value="$PROJECT_DIR$/Bookshop.Domain/Models/Book.cs" />
       <option value="$PROJECT_DIR$/Bookshop.DataAccess.MSSQL/Entities/Book.cs" />
       <option value="$PROJECT_DIR$/Bookshop.Domain/Interface/IShowcaseRepository.cs" />
       <option value="$PROJECT_DIR$/Bookshop.Api/Models/Book.cs" />
@@ -64,12 +70,17 @@
       <option value="$PROJECT_DIR$/Bookshop.BussinesLogic/Exceptions/NotFoundException.cs" />
       <option value="$PROJECT_DIR$/Bookshop.BussinesLogic/Exceptions/ValidateShowcase.cs" />
       <option value="$PROJECT_DIR$/Bookshop.Tests/BookServiceTest.cs" />
-      <option value="$PROJECT_DIR$/Bookshop.Api/Controllers/BookController.cs" />
       <option value="$PROJECT_DIR$/Bookshop.Tests/ShowcaseServiceTest.cs" />
       <option value="$PROJECT_DIR$/Bookshop.Api/Controllers/ShowcaseController.cs" />
-      <option value="$PROJECT_DIR$/Bookshop.BussinesLogic/Services/BookService.cs" />
-      <option value="$PROJECT_DIR$/Bookshop.Api/Startup.cs" />
       <option value="$PROJECT_DIR$/Bookshop.BussinesLogic/Services/ShowcaseService.cs" />
+      <option value="$PROJECT_DIR$/Bookshop.Api/Startup.cs" />
+      <option value="$PROJECT_DIR$/Bookshop.BussinesLogic/Services/BookService.cs" />
+      <option value="$PROJECT_DIR$/Bookshop.Api/nlog.config" />
+      <option value="$PROJECT_DIR$/Bookshop.Api/Program.cs" />
+      <option value="$PROJECT_DIR$/Bookshop.Api/appsettings.json" />
+      <option value="$PROJECT_DIR$/Bookshop.Api/appsettings.Development.json" />
+      <option value="$PROJECT_DIR$/Bookshop.Api/Controllers/BookController.cs" />
+      <option value="$PROJECT_DIR$/Bookshop.Domain/Models/Book.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1oTgD0xQyagBeFpFEBKclIpPye4" />
@@ -131,7 +142,8 @@
       <workItem from="1613496486394" duration="2173000" />
       <workItem from="1613738255627" duration="18000" />
       <workItem from="1613755848220" duration="2754000" />
-      <workItem from="1613920230290" duration="2679000" />
+      <workItem from="1613920230290" duration="2817000" />
+      <workItem from="1614094067954" duration="997000" />
     </task>
     <servers />
   </component>

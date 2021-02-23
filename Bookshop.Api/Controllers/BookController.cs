@@ -6,6 +6,7 @@ using Bookshop.BussinesLogic.Services;
 using Bookshop.Domain.Interface;
 using Bookshop.Domain.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 
 namespace Bookshop.Api.Controllers
 {
@@ -15,11 +16,13 @@ namespace Bookshop.Api.Controllers
     {
         private readonly IBookService _bookService;
         private readonly IMapper _mapper;
+        private readonly ILogger<BookController> _logger;
 
-        public BookController(IBookService bookService,IMapper mapper)
+        public BookController(IBookService bookService,IMapper mapper, ILogger<BookController> logger)
         {
             _bookService = bookService;
             _mapper = mapper;
+            _logger = logger;
         }
 
 
@@ -30,6 +33,7 @@ namespace Bookshop.Api.Controllers
             {
                 var newDomainBook = _mapper.Map<Book>(createBookRequest);
                 var result = _bookService.Add(newDomainBook);
+                _logger.LogInformation($"Add book with name {newDomainBook.Name}");
                 return Ok(result);
             }
             catch (ValidateShowcase ex)
@@ -42,6 +46,7 @@ namespace Bookshop.Api.Controllers
         [HttpGet]
         public ActionResult<GetBookResponse> GetAll()
         {
+            _logger.LogInformation("Get All Books");
             var domainBooks = _bookService.GetAll();
             return new GetBookResponse
             {
@@ -64,6 +69,7 @@ namespace Bookshop.Api.Controllers
             try
             {
                 var result = _bookService.Delete(id);
+                _logger.LogWarning($"Book with id {id} was delete ");
                 return Ok(result);
             }
             catch (NotFoundException ex)
@@ -81,6 +87,7 @@ namespace Bookshop.Api.Controllers
             {
                 var newDomainBook = _mapper.Map<Book>(bookDto);
                 var result = _bookService.Update(newDomainBook);
+                _logger.LogInformation($"Book with name {newDomainBook.Name} was updated");
                 return Ok(result);
             }
             catch (NotFoundException ex)

@@ -30,6 +30,7 @@
           <e p="GetShowcasesResponse.cs" t="Include" />
           <e p="ShowcaseDto.cs" t="Include" />
         </e>
+        <e p="nlog.config" t="Include" />
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
             <e p="net5.0" t="Include">
@@ -79,6 +80,8 @@
           <e p="20210215153624_AddNullToShowcaseID.Designer.cs" t="Include" />
           <e p="20210219173223_AddNullableForDeleteTime.cs" t="Include" />
           <e p="20210219173223_AddNullableForDeleteTime.Designer.cs" t="Include" />
+          <e p="20210223153938_AddColumnAttributeForBook.cs" t="Include" />
+          <e p="20210223153938_AddColumnAttributeForBook.Designer.cs" t="Include" />
           <e p="BookshopContextModelSnapshot.cs" t="Include" />
         </e>
         <e p="MssqlAutoMapperProfile.cs" t="Include" />
